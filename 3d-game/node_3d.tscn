@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf420obocjfwi"]
+
+[ext_resource type="PackedScene" uid="uid://bapuk6pkxyq1a" path="res://shapes.tscn" id="1_vo0sq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_70gkq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_sn3ff"]
+sky_material = SubResource("ProceduralSkyMaterial_70gkq")
+
+[sub_resource type="Environment" id="Environment_jxrsp"]
+background_mode = 2
+sky = SubResource("Sky_sn3ff")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jxrsp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Shapes" parent="DirectionalLight3D" instance=ExtResource("1_vo0sq")]
+
+[node name="Shapes" parent="DirectionalLight3D/Shapes" instance=ExtResource("1_vo0sq")]
+transform = Transform3D(0.0223384, 2.98023e-08, 0.99975, -2.98023e-08, 1, 0, -0.99975, 0, 0.0223384, 1.60826, 2.60248, 5.13755)
+
+[node name="Shapes" parent="." instance=ExtResource("1_vo0sq")]
+transform = Transform3D(0.0223384, 0, 0.99975, 0, 1, 0, -0.99975, 0, 0.0223384, 0, 0.016355, 2.88687)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.192276, 0.0458065, 0.980271, -0.231748, 0.972776, 1.71222e-07, -0.953584, -0.227176, 0.197657, 5.16887, 0.426103, 2.32699)
+fov = 123.089
+near = 0.958
+far = 3999.95

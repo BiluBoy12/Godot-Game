@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bapuk6pkxyq1a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bebgg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mgklk"]
+
+[node name="Shapes" type="Node3D"]
+transform = Transform3D(0.0223384, 0, 0.99975, 0, 1, 0, -0.99975, 0, 0.0223384, 0, 0.016355, 0)
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.65052, -0.178624, 1.35828, 1.14582, 0.985749, 1.52198, -0.750946, 1.89669, -0.663088, -2.35944, 1.23781, 1.91042)
+mesh = SubResource("BoxMesh_bebgg")
+
+[node name="BEAN" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 3.06422e-14, -1.75089e-07, 0, 1, 1.74846e-07, 1.76951e-07, -1.74846e-07, 1, 1.73718, -0.00800025, -1.48208)
+mesh = SubResource("CapsuleMesh_mgklk")
